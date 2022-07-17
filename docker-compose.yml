@@ -1,0 +1,36 @@
+version: "3"
+services:
+  web:
+    build: ./web-api
+    ports:
+      - 3000:3000
+    env_file:
+      - .env
+    volumes:
+      - ./web-api:/app
+    command: npm run start
+    depends_on:
+      - mysql
+    networks:
+      - anima-network
+  mysql:
+    image: mysql:8.0
+    platform: linux/x86_64
+    volumes:
+      - ./docker/mysql/my.cnf:/etc/mysql/conf.d/my.cnf
+      - ./docker/mysql/initdb.d:/docker-entrypoint-initdb.d
+      - ./docker/mysql/data:/var/lib/mysql
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: "true"
+      MYSQL_DATABASE: anima
+      MYSQL_USER: anima
+      MYSQL_PASSWORD: anima
+      TZ: Asia/Tokyo
+    ports:
+      - 3306:3306
+    networks:
+      - anima-network
+
+networks:
+  anima-network:
+    driver: bridge

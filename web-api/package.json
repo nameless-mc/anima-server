@@ -1,0 +1,31 @@
+{
+  "name": "anima-web-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "ts-node src/index.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/express": "^4.17.13",
+    "@types/express-session": "^1.17.5",
+    "@types/mysql": "^2.15.21",
+    "@types/node": "^17.0.35",
+    "@types/passport": "^1.0.9",
+    "@types/twitter": "^1.7.1",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "express-session": "^1.17.3",
+    "mysql2": "^2.3.3",
+    "passport": "^0.6.0",
+    "session-memory-store": "^1.0.0",
+    "ts-node": "^10.7.0",
+    "twitter": "^1.7.1",
+    "twitter-oauth2": "^1.0.5",
+    "typescript": "^4.6.4",
+    "undici": "^5.7.0"
+  }
+}
